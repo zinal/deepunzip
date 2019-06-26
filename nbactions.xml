@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>run</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-classpath %classpath ru.zinal.deepunzip.Tool Db2wh_190626071639_logs.zip Db2wh_190626071639_logs support</exec.args>
+                <exec.executable>java</exec.executable>
+                <exec.workingdir>/Users/zinal/Documents/Customers/СДЭК</exec.workingdir>
+            </properties>
+        </action>
+        <action>
+            <actionName>debug</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-Xdebug -Xrunjdwp:transport=dt_socket,server=n,address=${jpda.address} -classpath %classpath ru.zinal.deepunzip.Tool Db2wh_190626071639_logs.zip Db2wh_190626071639_logs support</exec.args>
+                <exec.executable>java</exec.executable>
+                <jpda.listen>true</jpda.listen>
+                <exec.workingdir>/Users/zinal/Documents/Customers/СДЭК</exec.workingdir>
+            </properties>
+        </action>
+        <action>
+            <actionName>profile</actionName>
+            <packagings>
+                <packaging>jar</packaging>
+            </packagings>
+            <goals>
+                <goal>process-classes</goal>
+                <goal>org.codehaus.mojo:exec-maven-plugin:1.2.1:exec</goal>
+            </goals>
+            <properties>
+                <exec.args>-classpath %classpath ru.zinal.deepunzip.Tool Db2wh_190626071639_logs.zip Db2wh_190626071639_logs support</exec.args>
+                <exec.executable>java</exec.executable>
+                <exec.workingdir>/Users/zinal/Documents/Customers/СДЭК</exec.workingdir>
+            </properties>
+        </action>
+    </actions>
