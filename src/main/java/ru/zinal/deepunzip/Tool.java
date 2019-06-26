@@ -41,7 +41,8 @@ public class Tool {
         File dir = new File(dirname);
         dir.mkdirs();
         try (FileInputStream fis = new FileInputStream(zipfile)) {
-            unpack(fis, dir, password.toCharArray());
+            unpack(fis, dir, 
+                    password==null ? null : password.toCharArray());
         }
     }
 
